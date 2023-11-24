@@ -1,55 +1,55 @@
-# Test automation project for [DemoQA](https://demoqa.com)
+# Проект автоматизации тестирования для [DemoQA](https://demoqa.com)
 
 <p align="center">
 <img src="media/logotypes/Toolsqa.jpg" alt="Toolsqa">
 </p>
 
-> DemoQA is a demo site for QA engineers, learning selenium.\
-> Made by Tools QA.\
-> Consists of website with training forms and example of bookshop with open API.
+> DemoQA - это демонстрационный сайт для QA-инженеров, изучающих selenium.\
+> Создан Tools QA.\
+> Состоит из веб-сайта с обучающими формами и примера книжного магазина с открытым API.
 
-# <a name="TableOfContents">Table of contents</a>
+# <a name="TableOfContents">Содержание</a>
 
-+ [Description](#Description)
-+ [Tools and technologies](#Technology)
-+ [How to run](#Jenkins)
-    + [Gradle command](#GradleCommand)
-    + [Property files](#PropertyFiles)
-    + [Run in Jenkins](#RunInJenkins)
-+ [Telegram Notifications](#TelegramNotifications)
-+ [Test results report in Allure Report](#AllureReport)
-+ [Allure TestOps integration](#AllureTestOps)
-    + [Project in Allure TestOps](#AllureTestOpsProject)
-    + [Start a run of custom set of tests](#AllureTestOpsStartTests)
-    + [Dashboard](#Dashboard)
-    + [Defects](#Defects)
-+ [Video of running tests](#Video)
++ [Описание](#Description)
++ [Инструменты и технологии](#Technology)
++ [Как запустить](#Jenkins)
+    + [Команды Gradle](#GradleCommand)
+    + [Файлы свойств](#PropertyFiles)
+    + [Запуск в Jenkins](#RunInJenkins)
++ [Уведомления в Telegram](#TelegramNotifications)
++ [Отчет о результатах тестирования в Allure Report](#AllureReport)
++ [Интеграция с Allure TestOps](#AllureTestOps)
+    + [Проект в Allure TestOps](#AllureTestOpsProject)
+    + [Запускаем пользовательский набор тестов](#AllureTestOpsStartTests)
+    + [Дашборд](#Dashboard)
+    + [Дефекты](#Defects)
++ [Видео с запущенными тестами](#Video)
 
-# <a name="Description">Description</a>
+# <a name="Description">Описание</a>
 
-The test project consists of Web and API tests.\
-A brief list of interesting facts about the project:
+Дипломный проект состоит из веб-тестов и тестов API.\
+Краткий список интересных фактов о проекте:
 
-- [x] `Page Object` with steps using `Chain of Invocations`
-- [x] Fake data generating with `Faker` library
-- [x] Parametrized tests
-- [x] Parametrized build
-- [x] Different configuration files for test running depending on build parameters
-- [x] Config with `Owner` library
-- [x] Use `Lombok` for models in API tests
-- [x] Objects serialization/deserialization for API requests/responses using `Jackson`
-- [x] Using request/response specifications for API tests
-- [x] Custom Allure listener for beautiful API requests/responses logging
-- [x] `Allure TestOps` integration
-- [x] Autotests as test documentation
-- [x] Parallel execution
-- [x] Failing tests retries
+- [x] `Page Object` и steps с использованием `Chain of Invocations`
+- [x] Генерация тестовых данных с помощью библиотеки `Faker`
+- [x] Параметризованные тесты
+- [x] Параметризованная сборка
+- [x] Различные файлы конфигурации для выполнения теста в зависимости от параметров сборки
+- [x] Конфигурация с библиотекой `Owner`
+- [x] Использование `Lombok` для моделей в тестах API
+- [x] Сериализация / десериализация объектов для запросов / ответов API с использованием `Jackson`
+- [x] Использование спецификаций запросов / ответов для тестов API
+- [x] Пользовательский Allure listener для красивого логирования запросов / ответов API
+- [x] `Allure TestOps` интеграция
+- [x] Автотесты как тестовая документация
+- [x] Параллельное выполнение
+- [x] Ретраи упавших тестов
 
-# <a name="Technology">Tools and a technologies</a>
+# <a name="Technology">Инструменты и технологии</a>
 
 <p align="center">
   <code><img width="5%" title="IntelliJ IDEA" src="./media/logotypes/IDEA-logo.svg"></code>
-  <code><img width="5%" title="Java" src="./media/logotypes/java-logo.svg"></code>
+  <code><img width="5%" title="Java" src="./media/logotypes/Java.png"></code>
   <code><img width="5%" title="Selenide" src="./media/logotypes/selenide-logo.svg"></code>
   <code><img width="5%" title="REST-Assured" src="./media/logotypes/rest-assured-logo.svg"></code>
   <code><img width="5%" title="Selenoid" src="./media/logotypes/selenoid-logo.svg"></code>
@@ -62,47 +62,47 @@ A brief list of interesting facts about the project:
   <code><img width="5%" title="Telegram" src="./media/logotypes/Telegram.svg"></code>
 </p>
 
-The autotests in this project are written in `Java` using `Selenide` framework.\
-`Gradle` - is used as a build automation tool.  \
-`JUnit5` - to execute tests.\
-`REST Assured` - for easy API testing of REST services.\
-`Jenkins` - CI/CD for running tests remotely.\
-`Selenoid` - to remote launching browsers in `Docker` containers.\
-`Allure Report` - for test results visualisation.\
-`Telegram Bot` - for test results notifications.\
-`Allure TestOps` - as Test Management System.
+Автотесты в этом проекте написаны на `Java` с использованием `Selenide` фреймворка.\
+`Gradle` - используется в качестве инструмента автоматизации сборки.  \
+`JUnit5` - для выполнения тестов.\
+`REST Assured` - для упрощения тестирования API сервисов REST.\
+`Jenkins` - CI/CD для удаленного запуска тестов.\
+`Selenoid` - для удаленного запуска браузеров в `Docker` контейнерах.\
+`Allure Report` - для визуализации результатов тестирования.\
+`Telegram Bot` - для уведомлений о результатах тестирования.\
+`Allure TestOps` - как система управления тестированием.
 
-[Back to the table of contents ⬆](#TableOfContents)
+[Назад к содержанию ⬆](#TableOfContents)
 
-# <a name="HowToRun">How to run</a>
+# <a name="HowToRun">Как запустить</a>
 
-## <a name="GradleCommand">Gradle command</a>
+## <a name="GradleCommand">Команды Gradle</a>
 
-To run locally the following command can be is used:
+Для локального запуска может быть использована следующая команда:
 
 ```bash
 gradle clean test
 ```
 
-Additional parameters:
-> `-Dthreads=<number_of_threads>` can be added for parallel tests execution\
-> `-Denv=remote` can be added for remote tests execution when remote url is set in remote.properties
+Дополнительные параметры:
+> `-Dthreads=<number_of_threads>` может быть добавлен для параллельного выполнения тестов\
+> `-Denv=remote` может быть добавлен для выполнения удаленных тестов.
 
-`-Dtag=<tag>` - tests with this tag will be executed:
+`-Dtag=<tag>` - тесты с этим тегом будут выполняться:
 >- *api*
 >- *ui*
 
-Additional properties are retrieved from the corresponding properties files:
+Дополнительные свойства извлекаются из соответствующих файлов свойств:
 
 ```bash
 ./resources/config/${value}.properties
 ```
 
-[Back to the table of contents ⬆](#TableOfContents)
+[Назад к содержанию ⬆](#TableOfContents)
 
-## <a name="PropertyFiles">Property files</a>
+## <a name="PropertyFiles">Файлы свойств</a>
 
-Possible properties in a `${env}.properties` file, local or remote:
+Возможные свойства в `${env}.properties` файле, локальном или удаленном:
 
 ```properties
 browserName=
@@ -113,81 +113,79 @@ isRemote=
 remoteURL=
 ```
 
->- *browserName* - browser for Web tests, chrome and firefox supported
->- *browserVersion* - version of browser for Web tests
->- *browserSize* - size of browser for Web tests
->- *baseUrl* - base URL for Web tests
->- *isRemote* - defines local or remote environments
->- *remoteURL* - URL for remote WebDriver
+>- *browserName* - браузер для веб-тестов, поддерживается CHROME и FIREFOX
+>- *browserVersion* - версия браузера для веб-тестов
+>- *browserSize* - размер браузера для веб-тестов
+>- *baseUrl* - базовый URL для веб-тестов
+>- *isRemote* - определяет локальные или удаленные среды
+>- *remoteURL* - URL для удаленного WebDriver
 
-Possible properties in a `user.properties` file:
+Возможные свойства `user.properties` файла:
 
 ```properties
 username=
 password=
 ```
 
->- *username* - for authorization by old user that has a Git Pocket Guide book added in profile
->- *password* - used for all users in tests
+>- *username* - для авторизации старого пользователя, у которого в профиле добавлен Git Pocket Guide book
+>- *password* - используется для всех пользователей в тестах
 
-[Back to the table of contents ⬆](#TableOfContents)
+[Назад к содержанию ⬆](#TableOfContents)
 
-## <a name="RunInJenkins">Run in [Jenkins](https://jenkins.autotests.cloud/job/Final-project-demoqa/)</a>
+## <a name="RunInJenkins">Запуск в [Jenkins](https://jenkins.autotests.cloud/job/Final-project-demoqa/)</a>
 
-Main page of the build:
+Главная страница сборки:
 <p align="center">
 <img src="media/screenshots/JenkinsBuildMainPage.png" alt="JenkinsBuildMainPage" width="950">
 </p>
 
-A parametrized Jenkins job can be launched with needed ***parameters***:
+Параметризованная джоба Jenkins может быть запущена с необходимыми ***параметрами***:
 <p align="center">
 <img src="media/screenshots/JenkinsBuildParameters.png" alt="JenkinsBuildParameters" width="950">
 </p>
 
-Sensitive config files are created in build workspace on build start.\
-Relatively safe information transferred to the build by gradle arguments (see [Gradle command](#GradleCommand)
-section, 'Additional parameters').
+Конфиденциальные конфигурационные файлы создаются в рабочей области сборки при запуске сборки.\
+Относительно безопасная информация передается в сборку с помощью аргументов gradle (см. раздел [Команды Gradle](#GradleCommand)
+, "Дополнительные параметры").
 
-After the build is done the test results are available in:
+После завершения сборки результаты тестирования доступны в:
 >- <code><strong>*Allure Report*</strong></code>
->- <code><strong>*Allure TestOps*</strong></code> - results are uploaded there and the automated test-cases can be
-   automatically updated accordingly to the recent changes in the code.
+>- <code><strong>*Allure TestOps*</strong></code> - результаты загружаются туда, и автоматизированные тестовые примеры могут автоматически обновляться в соответствии с последними изменениями в коде.
 <p align="center">
 <img src="media/screenshots/JenkinsFinishedBuild.png" alt="JenkinsFinishedBuild" width="950">
 </p>
 
-[Back to the table of contents ⬆](#TableOfContents)
+[Назад к содержанию ⬆](#TableOfContents)
 
-# <a name="TelegramNotifications">Telegram Notifications</a>
+# <a name="TelegramNotifications">Уведомления в Telegram</a>
 
-Telegram bot sends a brief report to a specified telegram chat by results of each build.
+Telegram-бот отправляет краткий отчет в указанный telegram-чат по результатам каждой сборки.
 <p align="center">
 <img src="media/screenshots/TelegramNotification.png" alt="TelegramNotification" width="550">
 </p>
 
-[Back to the table of contents ⬆](#TableOfContents)
+[Назад к содержанию ⬆](#TableOfContents)
 
-# <a name="AllureReport">Test results report in [Allure Report](https://jenkins.autotests.cloud/job/Final-project-demoqa/2/allure/#)</a>
+# <a name="AllureReport">Отчет о результатах тестирования в [Allure Report](https://jenkins.autotests.cloud/job/Final-project-demoqa/2/allure/#)</a>
 
-## Main page
+## Главная страница
 
-Main page of Allure report contains the following blocks:
+Главная страница Allure report содержит следующие блоки:
 
->- <code><strong>*ALLURE REPORT*</strong></code> - displays date and time of the test, overall number of launched
-    tests, and a diagram with percent and number of passed, failed or broken tests
->- <code><strong>*TREND*</strong></code> - displays trend of running tests for all runs
->- <code><strong>*SUITES*</strong></code> - displays distribution of tests by suites
->- <code><strong>*CATEGORIES*</strong></code> - displays distribution of unsuccessful tests by defect types
+>- <code><strong>*ALLURE REPORT*</strong></code> - отображает дату и время тестирования, общее количество запущенных тестов и диаграмму с процентом и количеством пройденных, неудачных или неработающих тестов
+>- <code><strong>*TREND*</strong></code> - отображает тенденцию выполнения тестов для всех запусков
+>- <code><strong>*SUITES*</strong></code> - отображает распределение тестов по наборам
+>- <code><strong>*CATEGORIES*</strong></code> - отображает распределение неудачных тестов по типам дефектов
 <p align="center">
   <img src="media/screenshots/AllureReportMain.png" alt="AllureReportMain" width="950">
 </p>
 
-## List of tests with steps and test artefacts
+## Список тестов с шагами и тестовыми артефактами
 
-On the page the list of the tests grouped by suites with status shown for each test.\
-Full info about each test can be shown: tags, severity, duration, detailed steps.
+На странице представлен список тестов, сгруппированных по наборам, со статусом, показанным для каждого теста.\
+Может быть показана полная информация о каждом тесте: теги, серьезность, продолжительность, подробные шаги.
 
-Also additional test artifacts are available:
+Также доступны дополнительные тестовые артефакты:
 >- Screenshot
 >- Page Source
 >- Browser console log
@@ -201,59 +199,56 @@ Also additional test artifacts are available:
   <img src="media/screenshots/AllureReportBehaviors.png" alt="AllureReportBehaviors" width="1150">
 </p>
 
-[Back to the table of contents ⬆](#TableOfContents)
+[Назад к содержанию ⬆](#TableOfContents)
 
-# <a name="AllureTestOps">[Allure TestOps](https://allure.autotests.cloud/project/1810/dashboards) integration</a>
+# <a name="AllureTestOps">Интеграция с [Allure TestOps](https://allure.autotests.cloud/project/1810/dashboards)</a>
 
-## <a name="AllureTestOpsProject">Project in Allure TestOps</a>
+## <a name="AllureTestOpsProject">Проект в Allure TestOps</a>
 
-Test-cases in the project are imported and constantly updated from the code,
-so there is no need in complex process of synchronization manual test-cases and autotests.\
-It is enough to create and update an autotest in the code and the test-case in TMS always will be in actual state.\
-Manual test-cases also can be added in TMS in case of need (via web interface or via code).
+Тест-кейсы в проект импортируются и постоянно обновляются из кода, поэтому нет необходимости в сложном процессе синхронизации ручных тест-кейсов и автотестов.\
+Достаточно создать и обновить автотест в коде, и тестовый пример в TMS всегда будет в актуальном состоянии.\
+Ручные тест-кейсы также могут быть добавлены в TMS в случае необходимости (через веб-интерфейс или с помощью кода).
 <p align="center">
   <img src="media/screenshots/AllureTestOpsTests.png" alt="AllureTestOpsTests" width="1050">
 </p>
 
-## <a name="AllureTestOpsStartTests">Ability to start a run of custom set of tests from Allure TestOps</a>
+## <a name="AllureTestOpsStartTests">Возможность запуска пользовательского набора тестов из Allure TestOps</a>
 
-Any person not related to autotest creation can select a set of tests, environment parameters and start a run.\
-Allure TestOps run will be created, Jenkins job triggered with correct parameters. And results of the job will be
-seamlessly integrated into Allure TestOps.
+Любой человек, не имеющий отношения к созданию автотестов, может выбрать набор тестов, параметры среды и запустить запуск.\
+Будет создан Allure TestOps run, задание Jenkins запущено с правильными параметрами. Результаты джобы будут легко интегрированы в Allure TestOps.
 <p align="center">
   <img src="media/screenshots/AllureTestOpsSelectionOfTests.png" alt="AllureTestOpsSelectionOfTests" width="1050">
 </p>
 
-As soon as the Jenkins job is done, corresponding tests get their statuses. A tester can finish manual tests (if any)
-and click "Close launch".
+Как только задание Jenkins будет выполнено, соответствующие тесты получат свои статусы. Тестировщик может завершить ручные тесты (если таковые имеются) и нажать "Close launch".
 
 <p align="center">
   <img src="media/screenshots/AllureTestOpsLaunches.png" alt="AllureTestOpsLaunches" width="1250">
 </p>
 
-> After that all these test-cases(names, steps, tags etc.) will be updated according to the recent code changes.
+> После этого все эти тест кейсы (имена, шаги, теги и т.д.) Будут обновлены в соответствии с последними изменениями кода.
 
-[Back to the table of contents ⬆](#TableOfContents)
+[Назад к содержанию ⬆](#TableOfContents)
 
-## <a name="Dashboard">Dashboard</a>
+## <a name="Dashboard">Дашборд</a>
 
-Automation trends charts, distribution tests by some different parameters etc.:
+Графики тенденций автоматизации, тесты распространения по некоторым различным параметрам и т.д.:
 <p align="center">
   <img src="media/screenshots/AllureTestOpsDashboard.png" alt="AllureTestOpsDashboard" width="1050">
 </p>
 
-[Back to the table of contents ⬆](#TableOfContents)
+[Назад к содержанию ⬆](#TableOfContents)
 
-## <a name="Defects">Defects</a>
+## <a name="Defects">Дефекты</a>
 
-Knows defects are automatically recognized by defined patterns for test fails in further launches.
+Знает, что дефекты автоматически распознаются по определенным шаблонам для сбоев теста при дальнейших запусках.
 <p align="center">
   <img src="media/screenshots/AllureTestOpsDefects.png" alt="AllureTestOpsDefects" width="1050">
 </p>
 
-[Back to the table of contents ⬆](#TableOfContents)
+[Назад к содержанию ⬆](#TableOfContents)
 
-# <a name="Video">Video of running tests</a>
+# <a name="Video">Видео с запущенными тестами</a>
 
 <p align="center">
   <img src="media/screenshots/VideoForm.gif" alt="VideoForm" width="500">
@@ -263,4 +258,4 @@ Knows defects are automatically recognized by defined patterns for test fails in
   <img src="media/screenshots/VideoSearch.gif" alt="VideoSearch" width="500">
 </p>
 
-[Back to the table of contents ⬆](#TableOfContents)
+[Назад к содержанию ⬆](#TableOfContents)
