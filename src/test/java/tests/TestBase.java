@@ -8,6 +8,7 @@ import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Tag;
 
 import java.util.Objects;
 
@@ -18,16 +19,17 @@ public class TestBase {
     private static final LaunchConfig CONFIG = LaunchConfigReader.Instance.read();
 
     @BeforeAll
-    static void setUp() {
+    @Tag("ui")
+    static void setUpUI() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
 
         ProjectConfiguration projectConfiguration = new ProjectConfiguration(CONFIG);
         projectConfiguration.webConfig();
-        projectConfiguration.apiConfig();
     }
 
     @AfterEach
-    void tearDown() {
+    @Tag("ui")
+    void tearDownUI() {
         Attach.screenshotAs("Screenshot");
         Attach.pageSource();
         if (Objects.equals(System.getProperty("browserName"), "chrome")) {
@@ -36,5 +38,12 @@ public class TestBase {
         Attach.addVideo();
 
         getWebDriver().manage().deleteAllCookies();
+    }
+
+    @BeforeAll
+    @Tag("api")
+    static void setUpAPI() {
+        ProjectConfiguration projectConfiguration = new ProjectConfiguration(CONFIG);
+        projectConfiguration.apiConfig();
     }
 }
