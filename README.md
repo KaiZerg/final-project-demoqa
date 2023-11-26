@@ -48,18 +48,18 @@
 # <a name="Technology">Инструменты и технологии</a>
 
 <p align="center">
-  <code><img width="5%" title="IntelliJ IDEA" src="./media/logotypes/IDEA-logo.svg"></code>
-  <code><img width="5%" title="Java" src="./media/logotypes/Java.png"></code>
-  <code><img width="5%" title="Selenide" src="./media/logotypes/selenide-logo.svg"></code>
-  <code><img width="5%" title="REST-Assured" src="./media/logotypes/rest-assured-logo.svg"></code>
-  <code><img width="5%" title="Selenoid" src="./media/logotypes/selenoid-logo.svg"></code>
-  <code><img width="5%" title="Gradle" src="./media/logotypes/gradle-logo.svg"></code>
-  <code><img width="5%" title="JUnit5" src="./media/logotypes/junit5-logo.svg"></code>
-  <code><img width="5%" title="Allure Report" src="./media/logotypes/allure-Report-logo.svg"></code>
-  <code><img width="5%" title="Allure TestOps" src="./media/logotypes/allure-ee-logo.svg"></code>
-  <code><img width="5%" title="Github" src="./media/logotypes/git-logo.svg"></code>
-  <code><img width="5%" title="Jenkins" src="./media/logotypes/jenkins-logo.svg"></code>
-  <code><img width="5%" title="Telegram" src="./media/logotypes/Telegram.svg"></code>
+  <code><a href="https://www.jetbrains.com/idea/"><img width="5%" title="IntelliJ IDEA" src="./media/logotypes/IDEA-logo.svg"></a></code>
+  <code><a href="https://www.java.com/"><img width="5%" title="Java" src="./media/logotypes/Java.png"></a></code>
+  <code><a href="https://selenide.org/"><img width="5%" title="Selenide" src="./media/logotypes/selenide-logo.svg"></a></code>
+  <code><a href="https://rest-assured.io/"><img width="5%" title="REST-Assured" src="./media/logotypes/rest-assured-logo.svg"></a></code>
+  <code><a href="https://aerokube.com/selenoid/"><img width="5%" title="Selenoid" src="./media/logotypes/selenoid-logo.svg"></a></code>
+  <code><a href="https://gradle.org/"><img width="5%" title="Gradle" src="./media/logotypes/gradle-logo.svg"></a></code>
+  <code><a href="https://junit.org/junit5/"><img width="5%" title="JUnit5" src="./media/logotypes/junit5-logo.svg"></a></code>
+  <code><a href="https://github.com/allure-framework"><img width="5%" title="Allure Report" src="./media/logotypes/allure-Report-logo.svg"></a></code>
+  <code><a href="https://qameta.io/"><img width="5%" title="Allure TestOps" src="./media/logotypes/allure-ee-logo.svg"></a></code>
+  <code><a href="https://github.com/"><img width="5%" title="Github" src="./media/logotypes/git-logo.svg"></a></code>
+  <code><a href="https://www.jenkins.io/"><img width="5%" title="Jenkins" src="./media/logotypes/jenkins-logo.svg"></a></code>
+  <code><a href="https://web.telegram.org/"><img width="5%" title="Telegram" src="./media/logotypes/Telegram.svg"></a></code>
 </p>
 
 Автотесты в этом проекте написаны на `Java` с использованием `Selenide` фреймворка.\

@@ -1,6 +1,6 @@
 package tests.web;
 
-import data.pages.BookStorePage;
+import pages.BookStorePage;
 import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;

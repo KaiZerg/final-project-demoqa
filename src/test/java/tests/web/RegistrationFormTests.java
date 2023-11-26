@@ -1,7 +1,7 @@
 package tests.web;
 
 import data.RegistrationData;
-import data.pages.RegistrationFormPage;
+import pages.RegistrationFormPage;
 import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;

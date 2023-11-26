@@ -2,7 +2,7 @@ package config.user;
 
 import org.aeonbits.owner.Config;
 
-@Config.Sources({"classpath:config/user.properties"})
+@Config.Sources({"classpath:properties/user.properties"})
 public interface UserConfig extends Config {
 
     @Key("username")

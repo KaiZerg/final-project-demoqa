@@ -3,8 +3,8 @@ package config.web;
 import org.aeonbits.owner.Config;
 
 @Config.Sources({
-        "classpath:config/${env}.properties",
-        "classpath:config/local.properties"
+        "classpath:properties/${env}.properties",
+        "classpath:properties/local.properties"
 })
 public interface LaunchConfig extends Config {
 

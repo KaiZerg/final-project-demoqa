@@ -1,13 +1,13 @@
-package data.models;
+package models;
 
 import lombok.Data;
 
 import java.util.List;
 
 @Data
-public class User {
+public class UserNew {
 
-    private String userId,
+    private String userID,
             username;
 
     private List<Books> books;

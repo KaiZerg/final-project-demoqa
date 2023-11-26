@@ -1,13 +1,13 @@
-package data.api;
+package api;
 
-import data.models.Cookie;
-import data.models.Credentials;
-import data.models.Token;
-import data.models.UserNew;
+import models.Cookie;
+import models.Credentials;
+import models.Token;
+import models.UserNew;
 
-import static data.specs.RequestSpecs.jsonRequestSpec;
-import static data.specs.RequestSpecs.requestSpec;
-import static data.specs.ResponseSpecs.responseSpec;
+import static specs.RequestSpecs.jsonRequestSpec;
+import static specs.RequestSpecs.requestSpec;
+import static specs.ResponseSpecs.responseSpec;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.Matchers.emptyOrNullString;

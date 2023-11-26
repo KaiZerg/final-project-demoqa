@@ -1,10 +1,10 @@
 package tests.web;
 
 import data.RegistrationData;
-import data.api.AuthorizationApi;
-import data.models.Cookie;
-import data.models.Credentials;
-import data.pages.ProfilePage;
+import api.AuthorizationApi;
+import models.Cookie;
+import models.Credentials;
+import pages.ProfilePage;
 import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;

@@ -1,8 +1,8 @@
-package data.pages;
+package pages;
 
 import com.codeborne.selenide.SelenideElement;
-import data.pages.components.CalendarComponent;
-import data.pages.components.ResultsDialogComponent;
+import pages.components.CalendarComponent;
+import pages.components.ResultsDialogComponent;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
