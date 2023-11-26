@@ -7,7 +7,7 @@ import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import tests.TestBase;
+import tests.TestBaseApi;
 import org.assertj.core.api.SoftAssertions;
 
 import static config.user.UserProperties.PASSWORD;
@@ -26,7 +26,7 @@ import static org.hamcrest.CoreMatchers.is;
 @Feature(value = "API")
 @Story(value = "Account API")
 @Tag("api")
-class AccountTests extends TestBase {
+class AccountTests extends TestBaseApi {
 
     private final AuthorizationApi authorizationApi = new AuthorizationApi();
     private final Credentials credentials = new Credentials();

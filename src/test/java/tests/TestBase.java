@@ -2,39 +2,35 @@ package tests;
 
 import com.codeborne.selenide.logevents.SelenideLogger;
 import config.ProjectConfiguration;
-import config.web.BrowserName;
 import config.web.LaunchConfig;
 import config.web.LaunchConfigReader;
 import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
-import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.api.extension.AfterEachCallback;
-import org.junit.jupiter.api.extension.BeforeAllCallback;
-import org.junit.jupiter.api.extension.ExtensionContext;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
 
 import java.util.Objects;
 
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
-@Tag("test")
-public class TestBase implements BeforeAllCallback, AfterEachCallback {
+public class TestBase {
 
     private static final LaunchConfig CONFIG = LaunchConfigReader.Instance.read();
 
-    @Override
-    public void beforeAll(ExtensionContext extensionContext) {
+    @BeforeAll
+    static void setUp() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
 
         ProjectConfiguration projectConfiguration = new ProjectConfiguration(CONFIG);
-        projectConfiguration.apiConfig();
         projectConfiguration.webConfig();
+        projectConfiguration.apiConfig();
     }
 
-    @Override
-    public void afterEach(ExtensionContext extensionContext) {
+    @AfterEach
+    void tearDown() {
         Attach.screenshotAs("Screenshot");
         Attach.pageSource();
-        if (Objects.equals(System.getProperty("browserName"), BrowserName.CHROME.toString())) {
+        if (Objects.equals(System.getProperty("browserName"), "chrome")) {
             Attach.browserConsoleLogs();
         }
         Attach.addVideo();
