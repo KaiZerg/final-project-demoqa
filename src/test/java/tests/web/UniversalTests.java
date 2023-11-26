@@ -31,8 +31,8 @@ class UniversalTests extends TestBase {
         step("Open url", () ->
                 open(link.getLink()));
 
-        step("Page title should have text 'ToolsQA'", () -> {
-            String expectedTitle = "ToolsQA";
+        step("Page title should have text 'DEMOQA'", () -> {
+            String expectedTitle = "DEMOQA";
             String actualTitle = title();
 
             assertThat(actualTitle).isEqualTo(expectedTitle);
