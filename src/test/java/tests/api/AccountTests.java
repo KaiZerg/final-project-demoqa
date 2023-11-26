@@ -77,10 +77,12 @@ class AccountTests extends TestBaseApi {
         authorizationApi.createUser(credentials);
         Token token = authorizationApi.getToken(credentials);
 
-        assertThat(token.getToken()).isNotEmpty();
-        assertThat(token.getExpires()).isNotEmpty();
-        assertThat(token.getStatus()).isEqualTo("Success");
-        assertThat(token.getResult()).isEqualTo("User authorized successfully.");
+        SoftAssertions.assertSoftly(softly -> {
+            softly.assertThat(token.getToken()).isNotEmpty();
+            softly.assertThat(token.getExpires()).isNotEmpty();
+            softly.assertThat(token.getStatus()).isEqualTo("Success");
+            softly.assertThat(token.getResult()).isEqualTo("User authorized successfully.");
+        });
     }
 
     @Severity(NORMAL)
